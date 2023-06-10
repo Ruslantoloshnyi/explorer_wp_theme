@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying the footer
  *
@@ -11,24 +12,38 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'explorer' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'explorer' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'explorer' ), 'explorer', '<a href="http://underscores.me/">Ruslan Toloshnyi</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+<footer>
+	<div class="footer-container">
+		<div class="footer-content">
+			<div class="footer-content__menu">
+				<ul>
+					<li class="footer-content__menu-item"><a href="#">Home</a></li>
+					<li class="footer-content__menu-item"><a href="#">Blog</a></li>
+					<li class="footer-content__menu-item"><a href="#">Categories</a></li>
+					<li class="footer-content__menu-item"><a href="#">About us</a></li>
+					<li class="footer-content__menu-item"><a href="#">Contact us</a></li>
+				</ul>
+			</div>
+			<div class="footer-content-block">
+				<div class="footer-content__text">Copyright © Explorer - Images used for demonstration purpose only
+				</div>
+				<div class="footer-content__label">
+					<p>Explorer</p>
+				</div>
+				<div class="footer-content__social">
+					<a href=""><img src="./img/instagram.png" alt=""></a>
+					<a href=""><img src="./img/facebook.png" alt=""></a>
+					<a href=""><img src="./img/telegram.png" alt=""></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<script src="js/vendor.min.js"></script>
+<script src="js/main.min.js"></script>
 
 <?php wp_footer(); ?>
 
 </body>
+
 </html>

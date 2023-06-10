@@ -35,3 +35,14 @@ function explorer_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'explorer_pingback_header' );
+
+/**
+ * the_excerpt function
+ */
+// change count symbol the_excerpt function
+add_filter( 'excerpt_length', function(){
+	return 65;
+} );
+
+// change end visual
+add_filter( 'excerpt_more', fn() => '  ...' );

@@ -10,50 +10,103 @@
  */
 
 ?>
-<!doctype html>
-<html <?php language_attributes(); ?>>
-<head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>gulp-scss-starter</title>
+        <meta name="theme-color" content="#fff">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+        <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+        <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+        <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+        <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+        <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+        <link rel="stylesheet" href="styles/main.min.css">
+		<?php wp_head(); ?>
+    </head>
+    <body>        
+        <!-- header -->
+<div class="background">
+    <header>
+        <div class="header_wrapper">
 
-	<?php wp_head(); ?>
-</head>
+            <div class="header-holder">
 
-<body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'explorer' ); ?></a>
+                <div class="search-mobile" style="display: block;">
+                    <a rel="nofollow">
+                        <i class="icon_search"></i>
+                    </a>
+                </div>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$explorer_description = get_bloginfo( 'description', 'display' );
-			if ( $explorer_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $explorer_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+                <nav class="header-nav">
+                    <div class="header-nav__inner">
+                        <ul class="header-menu-list">
+                            <li class="header-menu-item">
+                                <a href="/">HOME</a>
+                            </li>
+                            <li class="header-menu-item">
+                                <a rel="nofollow" href="/works/">Blog</a>
+                            </li>
+                            <li class="header-menu-item">
+                                <a href="/technologies/">Categories</a>
+                            </li>
+                            <li class="header-menu-item">
+                                <a href="/services/">About us</a>
+                            </li>
+                            <li class="header-menu-item">
+                                <a rel="nofollow" href="/company/">Contact us</a>
+                            </li>
+                           
+                        </ul>
+                    </div>
+                </nav>
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'explorer' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+                <a href="/" class="logo"></a>
+
+                <a href="#" class="device-menu">
+                    <div class="device-menu__inner">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </a>
+
+            </div>
+            <div class="header-heading">
+                <div class="header-heading__head">Explorer</div>
+                <p class="header-heading__subhead">Webflow blog template</p>
+            </div>
+
+            <div class="header-menu">
+                <a href="">
+                    <div class="header-menu__item active">Home</div>
+                </a>
+                <a href="">
+                    <div class="header-menu__item">Blog</div>
+                </a>
+                <a href="">
+                    <div class="header-menu__item">Categories</div>
+                </a>
+                <a href="">
+                    <div class="header-menu__item">About us</div>
+                </a>
+                <a href="">
+                    <div class="header-menu__item">Contact us</div>
+                </a>
+            </div>
+        </div>
+    </header> <!-- header end-->

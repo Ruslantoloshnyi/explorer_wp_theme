@@ -138,10 +138,11 @@ add_action( 'widgets_init', 'explorer_widgets_init' );
  * Enqueue scripts and styles.
  */
 function explorer_scripts() {
-	wp_enqueue_style( 'explorer-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'explorer-style', 'rtl', 'replace' );
+
+	wp_enqueue_style( 'explorer-style.css', get_template_directory_uri() . '/assets/styles/main.min.css', array(), _S_VERSION );
 
 	wp_enqueue_script( 'explorer-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'explorer-scripts', get_template_directory_uri() . '/assets/js/main.min.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
