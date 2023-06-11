@@ -39,12 +39,14 @@
                     </div>
                 </div>
         <?php endwhile;
-        endif; ?>
+        endif;
+        wp_reset_postdata(); ?>
 
         <div class="content-read-more">
             <div class="content-read-more__text">Want to read more?</div>
             <div class="content-read-more__button">
-                <a href="#">Visit Blog Archive</a>
+               
+                <a href="<?php echo get_tag_link(get_term_by('slug', 'travel', 'post_tag')); ?>">Visit Blog Archive</a>
             </div>
         </div>
 
