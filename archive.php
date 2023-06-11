@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying archive pages
  *
@@ -10,42 +11,99 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
-
-		<?php if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
-
+<?php if (is_post_type_archive('stories')) :
+	$args = array(
+		'post_type'      => 'stories',
+		'posts_per_page' => 3,
+		'tax_query'      => array(
+			array(
+				'taxonomy' => 'adventure',
+				'field'    => 'slug',
+				'terms'    => 'first',
+			),
+		),
+	);
+	$query = new WP_Query($args);
+?>
+	<section>
+		<div class="container">
 			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+			if ($query->have_posts()) :
+				while ($query->have_posts()) :
+					$query->the_post();
+			?>
+					<div class="content">
+						<div class="content__image">
+							<div>
+								<?php the_post_thumbnail(); ?>
+								<div class="content__head"><?php the_title(); ?></div>
+								<div class="content-autor">
+									<?php
+									$author_id = get_the_author_meta('ID');
+									echo get_avatar($author_id, 30);
+									?>
+									<div>
+										<div class="content-autor__name"><?php the_author(); ?></div>
+										<div class="content-autor__date"><?php the_date(); ?></div>
+									</div>
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+								</div>
+							</div>
+							<div class="content__image_text">
+								<p><?php the_content(); ?></p>
+							</div>
+						</div>
+					</div>
+			<?php endwhile;
+			endif; ?>
+		</div>
+	</section>
 
-			endwhile;
+<?php else :
+	$args = array(
+		'post_type' => 'post',
+		'posts_per_page' => -1,
+		'tag' => 'travel'
+	);
+	$query = new WP_Query($args);
+?>
 
-			the_posts_navigation();
+	<section>
+		<div class="container">
+			<?php
+			if ($query->have_posts()) :
+				while ($query->have_posts()) :
+					$query->the_post();
+			?>
+					<div class="content">
+						<div class="content__image">
+							<div>
+								<?php the_post_thumbnail(); ?>
+								<div class="content__head"><?php the_title(); ?></div>
+								<div class="content-autor">
+									<?php
+									$author_id = get_the_author_meta('ID');
+									echo get_avatar($author_id, 30);
+									?>
+									<div>
+										<div class="content-autor__name"><?php the_author(); ?></div>
+										<div class="content-autor__date"><?php the_date(); ?></div>
+									</div>
 
-		else :
+								</div>
+							</div>
+							<div class="content__image_text">
+								<p><?php the_content(); ?></p>
+							</div>
+						</div>
+					</div>
+			<?php endwhile;
+			endif; ?>
+		</div>
+	</section>
+<?php endif; ?>
 
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-	</main><!-- #main -->
 
 <?php
-get_sidebar();
+
 get_footer();

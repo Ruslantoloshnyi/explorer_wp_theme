@@ -54,7 +54,8 @@ function create_custom_post_type() {
         'public' => true,
         'label'  => 'Stories',
         'supports' => array( 'title', 'editor', 'thumbnail', 'author', ),
-		'taxonomies' => array( 'post_tag', 'adventure' )
+		'taxonomies' => array( 'post_tag', 'adventure' ),
+		'has_archive' => true
         // Другие параметры настройки
     );
     register_post_type( 'stories', $args );

@@ -51,7 +51,7 @@ $query = new WP_Query($args);
 
             <div class="stories__link">
                 <p>Want to read all of our stories?</p>
-                <a href="#">Read the full blog</a>
+                <a href="<?php echo get_post_type_archive_link('stories'); ?>">Read the full blog</a>                
             </div>
         </div>
 
