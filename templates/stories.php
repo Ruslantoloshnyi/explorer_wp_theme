@@ -5,6 +5,8 @@
  * Template post type: page*/
 ?>
 
+<?php get_header(); ?>
+
 <?php
 $args = array(
     'post_type'      => 'stories',
@@ -59,3 +61,5 @@ $query = new WP_Query($args);
 
     </div>
 </section>
+
+<?php get_footer(); ?>

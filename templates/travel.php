@@ -1,9 +1,11 @@
 <?php
 
 /**
- * Template Name: stories_page
+ * Template Name: travel_page
  * Template post type: page*/
 ?>
+
+<?php get_header(); ?>
 
 <?php
 $args = array(
@@ -51,3 +53,5 @@ $query = new WP_Query($args);
     </div>
 </section>
 </div>
+
+<?php get_footer(); ?>
