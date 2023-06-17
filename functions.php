@@ -49,7 +49,7 @@ function explorer_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'explorer' ),
+			'menu-1' => esc_html__( 'header_menu', 'explorer' ),
 		)
 	);
 
@@ -139,7 +139,7 @@ add_action( 'widgets_init', 'explorer_widgets_init' );
  */
 function explorer_scripts() {
 
-	wp_enqueue_style( 'explorer-style.css', get_template_directory_uri() . '/assets/styles/main.min.css', array(), _S_VERSION );
+	wp_enqueue_style( 'explorer-style.css', get_template_directory_uri() . '/assets/styles/main.css', array(), _S_VERSION );
 
 	wp_enqueue_script( 'explorer-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'explorer-scripts', get_template_directory_uri() . '/assets/js/main.min.js', array(), _S_VERSION, true );
