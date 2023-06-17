@@ -50,6 +50,7 @@ function explorer_setup() {
 	register_nav_menus(
 		array(
 			'menu-1' => esc_html__( 'header_menu', 'explorer' ),
+			'menu-2' => esc_html__( 'footer_menu', 'explorer' ),
 		)
 	);
 

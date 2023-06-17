@@ -88,3 +88,12 @@ function create_adventure_taxonomy() {
     register_taxonomy( 'adventure', 'stories', $args );
 }
 add_action( 'init', 'create_adventure_taxonomy' );
+
+// add classes to wp_nav_menu
+function add_my_class_to_nav_menu( $classes, $item ){
+	
+	$classes[] = 'footer-content__menu-item';
+
+	return $classes;
+}
+add_filter( 'nav_menu_css_class', 'add_my_class_to_nav_menu', 10, 2 );

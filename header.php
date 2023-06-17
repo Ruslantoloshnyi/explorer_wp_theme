@@ -63,10 +63,7 @@
                                 </li>
                                 <li class="header-menu-item">
                                     <a rel="nofollow" href="/works/">Blog</a>
-                                </li>
-                                <li class="header-menu-item">
-                                    <a href="/technologies/">Categories</a>
-                                </li>
+                                </li>                               
                                 <li class="header-menu-item">
                                     <a href="/services/">About us</a>
                                 </li>
@@ -104,27 +101,7 @@
                     'menu_class'      => 'header-menu',
                     
                 ]);
-                ?>
-
-                <!-- <ul class="header-menu">
-
-                    <li><a href="#">Home</a></li>
-
-                    <li><a href="#">Blog</a></li>
-
-                    <li>
-                        <a href="#">Categories</a>
-                        <ul>
-                            <li><a href="#">Travel</a></li>
-                            <li><a href="#">Stories</a></li>
-                        </ul>
-                    </li>
-
-                    <li><a href="#">About us</a></li>
-
-                    <li><a href="#">Contacts</a></li>
-
-                </ul> -->
+                ?>                
 
             </div>
         </header> <!-- header end-->

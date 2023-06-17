@@ -16,13 +16,14 @@
 	<div class="footer-container">
 		<div class="footer-content">
 			<div class="footer-content__menu">
-				<ul>
-					<li class="footer-content__menu-item"><a href="#">Home</a></li>
-					<li class="footer-content__menu-item"><a href="#">Blog</a></li>
-					<li class="footer-content__menu-item"><a href="#">Categories</a></li>
-					<li class="footer-content__menu-item"><a href="#">About us</a></li>
-					<li class="footer-content__menu-item"><a href="#">Contact us</a></li>
-				</ul>
+				<?php
+				wp_nav_menu([
+					'theme_location'  => 'menu-2',
+					'menu'            => '',
+					'container'       => 'ul',					
+				]);
+				?>
+				
 			</div>
 			<div class="footer-content-block">
 				<div class="footer-content__text">Copyright © Explorer - Images used for demonstration purpose only
