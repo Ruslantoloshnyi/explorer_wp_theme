@@ -51,6 +51,7 @@ function explorer_setup() {
 		array(
 			'menu-1' => esc_html__( 'header_menu', 'explorer' ),
 			'menu-2' => esc_html__( 'footer_menu', 'explorer' ),
+			'menu-3' => esc_html__( 'mobile_menu', 'explorer' ),
 		)
 	);
 

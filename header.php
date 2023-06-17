@@ -56,22 +56,17 @@
                     </div>
 
                     <nav class="header-nav">
-                        <div class="header-nav__inner">
-                            <ul class="header-menu-list">
-                                <li class="header-menu-item">
-                                    <a href="/">HOME</a>
-                                </li>
-                                <li class="header-menu-item">
-                                    <a rel="nofollow" href="/works/">Blog</a>
-                                </li>                               
-                                <li class="header-menu-item">
-                                    <a href="/services/">About us</a>
-                                </li>
-                                <li class="header-menu-item">
-                                    <a rel="nofollow" href="/company/">Contact us</a>
-                                </li>
-
-                            </ul>
+                        <div class="header-nav__inner">                            
+                                <?php
+                                wp_nav_menu([
+                                    'theme_location'  => 'menu-3',
+                                    'menu'            => '',
+                                    'container'       => 'ul',
+                                    'container_class' => '',
+                                    'container_id'    => '',
+                                    'menu_class'      => 'header-menu-list',                                   
+                                ]);
+                                ?>                           
                         </div>
                     </nav>
 
@@ -99,9 +94,9 @@
                     'container_class' => '',
                     'container_id'    => '',
                     'menu_class'      => 'header-menu',
-                    
+
                 ]);
-                ?>                
+                ?>
 
             </div>
         </header> <!-- header end-->
