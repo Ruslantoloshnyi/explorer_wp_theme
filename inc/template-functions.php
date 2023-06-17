@@ -97,3 +97,15 @@ function add_my_class_to_nav_menu( $classes, $item ){
 	return $classes;
 }
 add_filter( 'nav_menu_css_class', 'add_my_class_to_nav_menu', 10, 2 );
+
+if (function_exists('acf_add_options_page')) {
+
+	acf_add_options_page(array(
+		'page_title'    => 'Option',
+		'menu_title'    => 'Option',
+		'menu_slug'     => 'theme-general-settings',
+		'capability'    => 'edit_posts',
+		'redirect'      => false
+	));
+
+};

@@ -12,6 +12,15 @@
 
 ?>
 
+<?php
+$image_1 = get_field('footer_social_img_1', 'option');
+$img_1 = wp_get_attachment_image( $image_1, 'full');
+$image_2 = get_field('footer_social_img_2', 'option');
+$img_2 = wp_get_attachment_image( $image_2, 'full');
+$image_3 = get_field('footer_social_img_3', 'option');
+$img_3 = wp_get_attachment_image( $image_3, 'full');
+?>
+
 <footer>
 	<div class="footer-container">
 		<div class="footer-content">
@@ -20,21 +29,20 @@
 				wp_nav_menu([
 					'theme_location'  => 'menu-2',
 					'menu'            => '',
-					'container'       => 'ul',					
+					'container'       => 'ul',
 				]);
 				?>
-				
+
 			</div>
 			<div class="footer-content-block">
-				<div class="footer-content__text">Copyright © Explorer - Images used for demonstration purpose only
-				</div>
+				<div class="footer-content__text"><?php echo get_field('footer_copyright', 'option'); ?></div>
 				<div class="footer-content__label">
-					<p>Explorer</p>
+					<p><?php echo get_field('footer_label', 'option'); ?></p>
 				</div>
 				<div class="footer-content__social">
-					<a href=""><img src="./img/instagram.png" alt=""></a>
-					<a href=""><img src="./img/facebook.png" alt=""></a>
-					<a href=""><img src="./img/telegram.png" alt=""></a>
+					<a href="<?php echo get_field('footer_social_url_1', 'option'); ?>"><?php echo $img_1; ?></a>
+					<a href="<?php echo get_field('footer_social_url_2', 'option'); ?>"><?php echo $img_2; ?></a>
+					<a href="<?php echo get_field('footer_social_url_3', 'option'); ?>"><?php echo $img_3; ?></a>
 				</div>
 			</div>
 		</div>
