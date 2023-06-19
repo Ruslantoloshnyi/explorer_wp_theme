@@ -35,7 +35,7 @@ get_header();
 					<div class="content">
 						<div class="content__image">
 							<div>
-								<?php the_post_thumbnail(); ?>
+								<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 								<div class="content__head"><?php the_title(); ?></div>
 								<div class="content-autor">
 									<?php
@@ -78,7 +78,7 @@ get_header();
 					<div class="content">
 						<div class="content__image">
 							<div>
-								<?php the_post_thumbnail(); ?>
+								<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 								<div class="content__head"><?php the_title(); ?></div>
 								<div class="content-autor">
 									<?php

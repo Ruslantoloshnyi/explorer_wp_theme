@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part for displaying posts
  *
@@ -10,54 +11,33 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
+	<section>
+		<div class="container">
 
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				explorer_posted_on();
-				explorer_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+			<div class="content">
+				<div class="content__image">
+					<div>
+						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+						<div class="content__head"><?php the_title(); ?></div>
+						<div class="content-autor">
+							<?php
+							$author_id = get_the_author_meta('ID');
+							echo get_avatar($author_id, 30);
+							?>
+							<div>
+								<div class="content-autor__name"><?php the_author(); ?></div>
+								<div class="content-autor__date"><?php the_date(); ?></div>
+							</div>
 
-	<?php explorer_post_thumbnail(); ?>
+						</div>
+					</div>
+					<div class="content__image_text">
+						<p><?php the_content(); ?></p>
+					</div>
+				</div>
+			</div>
 
-	<div class="entry-content">
-		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'explorer' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				wp_kses_post( get_the_title() )
-			)
-		);
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'explorer' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php explorer_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+		</div>
+	</section>
+	</div>
 </article><!-- #post-<?php the_ID(); ?> -->

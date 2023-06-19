@@ -28,7 +28,7 @@ $query = new WP_Query($args);
                 ?>
                         <div class="stories-content-block">
                             <div class="stories-content-block__image">
-                                <?php the_post_thumbnail(); ?>
+                                <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
                                 <div class="stories-content-block__image-autor">
                                     <?php
                                     $author_id = get_the_author_meta('ID');
